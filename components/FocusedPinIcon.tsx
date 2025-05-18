@@ -42,7 +42,7 @@ const styles = StyleSheet.create({
     },
     pinContainer: {
       backgroundColor: "#fff",
-      borderRadius: 25,
+      borderRadius: 120,
       borderWidth: 2,
       borderColor: "#379F67",
       padding: 0,
@@ -50,7 +50,7 @@ const styles = StyleSheet.create({
     pinCircle: {
       width: 50,
       height: 50,
-      borderRadius: 25,
+      borderRadius: 120,
       justifyContent: "center",
       alignItems: "center",
     },
