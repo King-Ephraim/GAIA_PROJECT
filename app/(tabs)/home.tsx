@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { View, Text } from "react-native";
 import CustomNavBar from "../../components/CustomNavBar";
 
-const index = () => {
+const home = () => {
   const [active, setActive] = useState("home");
 
   return (
@@ -20,7 +20,7 @@ const index = () => {
           },
           {
             key: "map",
-            iconLib: "FontAwesome5",
+            iconLib: "Entypo",
             iconName: "map-marked-alt",
             onPress: () => setActive("map"),
           },
@@ -48,4 +48,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default home;
