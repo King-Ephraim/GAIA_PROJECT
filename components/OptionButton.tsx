@@ -1,15 +1,19 @@
-import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Dimensions } from 'react-native';
 import React from 'react';
 import { Ionicons, FontAwesome5, MaterialCommunityIcons, Entypo } from "@expo/vector-icons";
+
+const { width } = Dimensions.get('window');
+const CARD_WIDTH = width / 2.5; // Ajuste selon la taille de l'écran
 
 interface OptionButtonProps {
   iconLib: "Ionicons" | "FontAwesome5" | "MaterialCommunityIcons" | "Entypo";
   buttonTitle: string;
   iconName: string;
   onPress: () => void;
+  backgroundColor?: string; // optionnel pour personnaliser la couleur
 }
 
-const OptionButton: React.FC<OptionButtonProps> = ({ iconLib, iconName, buttonTitle, onPress }) => {
+const OptionButton: React.FC<OptionButtonProps> = ({ iconLib, iconName, buttonTitle, onPress, backgroundColor = "#9DC0AB" }) => {
   const renderIcon = (lib: string, name: string, color: string, size: number) => {
     switch (lib) {
       case "Ionicons":
@@ -26,7 +30,7 @@ const OptionButton: React.FC<OptionButtonProps> = ({ iconLib, iconName, buttonTi
   };
 
   return (
-    <TouchableOpacity style={styles.container} onPress={onPress}>
+    <TouchableOpacity style={[styles.container, { backgroundColor }]} onPress={onPress}>
       <View style={styles.topSection}>
         <View style={styles.iconWrapper}>
           <View style={styles.iconContainer}>
@@ -45,11 +49,12 @@ const OptionButton: React.FC<OptionButtonProps> = ({ iconLib, iconName, buttonTi
 const styles = StyleSheet.create({
   container: {
     height: 210,
-    width: 170,
-    backgroundColor: "#9DC0AB",
+    width: CARD_WIDTH,
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
+    marginVertical: 10,
+    marginHorizontal: 10,
   },
   topSection: {
     flex: 2,
@@ -67,16 +72,10 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",
-    // Ombre pour iOS
     shadowColor: "#000",
-    shadowOffset: {
-      width: 0,
-      height: 2,
-    },
+    shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-
-    // Ombre pour Android
     elevation: 5,
   },
   dot: {
@@ -95,12 +94,8 @@ const styles = StyleSheet.create({
     justifyContent: 'flex-start',
     paddingTop: 20,
   },
-  textContainer: {
-
-  },
   text: {
-    fontFamily: "Arial",
-    fontSize: 18,
+    fontSize: 16,
     fontWeight: "bold",
     textAlign: "center",
     color: "#000",

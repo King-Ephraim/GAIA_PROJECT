@@ -74,7 +74,6 @@ const styles = StyleSheet.create({
     width: 50,
     height: 50,
     borderRadius: 120,
-    backgroundColor: "#A5BDAA",
     justifyContent: "center",
     alignItems: "center",
   },

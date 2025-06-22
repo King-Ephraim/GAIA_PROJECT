@@ -8,11 +8,12 @@ import HistoryScreen from "./screens/HistoryScreen";
 import ReportScreen from "./screens/ReportScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SplashScreen from "./screens/SplashScreen";
-
+import SendScreen from "./screens/SendScreen";
 const Index = () => {
   const [active, setActive] = useState("home");
   const [showSplash, setShowSplash] = useState(true);
   const [showMainApp, setShowMainApp] = useState(false);
+  const [imageUri, setImageUri] = useState<string | null>(null);
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
@@ -55,13 +56,27 @@ const Index = () => {
             case "home":
               return <HomeScreen onNavigate={(screenKey: string) => setActive(screenKey)} />;
             case "report":
-              return <ReportScreen />;
+              return <ReportScreen
+                onImageSelected={(uri: string) => {
+                  setImageUri(uri);
+                  setActive("envoie");
+                }}
+              />;
             case "map":
               return <MapScreen />;
             case "history":
               return <HistoryScreen />;
             case "profile":
               return <ProfileScreen />;
+            case "envoie":
+              return (
+                <SendScreen
+                  imageUri={imageUri!}
+                  onGoBack={() => setActive("report")}
+                />
+              );
+
+
             default:
               return null;
           }

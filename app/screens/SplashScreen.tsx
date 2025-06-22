@@ -30,48 +30,45 @@ export default function SplashScreen({ onStart }: SplashScreenProps) {
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        flexDirection: 'column',
-        backgroundColor: '#379F67',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        paddingVertical:20 ,
-    },
-    logo: {
-        width: 500,
-        height: 500,
-        resizeMode: 'contain',
-        marginTop: -30,
-    },
-    welcomeContainer: {
-        width: '100%',
-        paddingHorizontal: 15, 
-    },
-    welcomeText: {
-        fontSize: 25,
-        color: '#fff',
-        textAlign: 'left',
-        lineHeight: 28,
-        fontWeight: '600',
-        paddingHorizontal: 20,
-    },
-    button: {
-        flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        backgroundColor: '#fff',
-        paddingVertical: 12,
-        paddingHorizontal: 55,
-        borderRadius: 10,
-        gap: 15,
-        width: "100%",
-        height: 60,
-    },
-    buttonText: {
-        color: '#379F67',
-        fontWeight: 'bold',
-        fontSize: 22,
-    },
-
+  container: {
+    flex: 1,
+    backgroundColor: '#379F67',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    paddingVertical: 40,
+  },
+  logo: {
+    width: 250,
+    height: 250,
+    resizeMode: 'contain',
+    marginTop: 30,
+  },
+  welcomeContainer: {
+    paddingHorizontal: 20,
+    width: '100%',
+  },
+  welcomeText: {
+    fontSize: 24,
+    color: '#fff',
+    textAlign: 'left',
+    lineHeight: 32,
+    fontWeight: '600',
+  },
+  button: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    gap: 30,
+    backgroundColor: '#fff',
+    paddingVertical: 14,
+    paddingHorizontal: 40,
+    borderRadius: 10,
+    marginBottom: 20,
+    width: '100%',
+  },
+  buttonText: {
+    color: '#379F67',
+    fontWeight: 'bold',
+    fontSize: 20,
+  },
 });
