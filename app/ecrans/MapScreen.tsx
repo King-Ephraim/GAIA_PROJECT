@@ -1,3 +1,4 @@
+import PageTitle from "@/components/PageTitle";
 import React, { useState } from "react";
 import { View, Text, TextInput, TouchableOpacity, StyleSheet, Image } from "react-native";
 import MapView, { Marker } from "react-native-maps";
@@ -78,7 +79,7 @@ const MapScreen: React.FC<MapScreenProps> = ({ onVoirPlus, setSelectedMarker }) 
       </MapView>
 
       <View style={styles.header} pointerEvents="box-none">
-        <Text style={styles.title}>🗺️ Carte des signalements</Text>
+        <PageTitle title=" Carte de signalements" />
         <View style={styles.searchContainer}>
           <Icon name="search" size={16} color="#888" style={{ marginRight: 8 }} />
           <TextInput
@@ -138,8 +139,8 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     elevation: 5,
     zIndex: 10,
+    marginTop: 50,
   },
-  title: { fontSize: 18, fontWeight: "bold", textAlign: "center", marginBottom: 10 },
   searchContainer: {
     flexDirection: "row",
     alignItems: "center",

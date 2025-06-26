@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import OptionButton from "../../components/OptionButton";
 import PageTitle from "../../components/PageTitle";
+import ScreenWrapper from "@/components/ScreenWrapper";
 
 type HomeProps = {
   onNavigate: (screenKey: string) => void;
@@ -25,7 +26,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate, username }) => {
   return (
     <View style={styles.container}>
       {/* Titre de la page */}
-      <PageTitle title="Page d’accueil" />
+        <PageTitle title="  Duneko" />  
 
       {/* En-tête */}
       <View style={styles.headerContainer}>
@@ -71,7 +72,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate, username }) => {
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#F8F8F8" },
+  container: { flex: 1, backgroundColor: "#F8F8F8" , paddingTop: 50},
 
   headerContainer: {
     flexDirection: "row",

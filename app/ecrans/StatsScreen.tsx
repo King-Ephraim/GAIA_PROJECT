@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-import { View, Text, StyleSheet, TouchableOpacity, ScrollView } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView
+} from "react-native";
 import Icon from "react-native-vector-icons/FontAwesome5";
+import PageTitle from "@/components/PageTitle";
 
 const StatsScreen = () => {
   const [selectedFeedback, setSelectedFeedback] = useState<number | null>(null);
@@ -20,7 +27,10 @@ const StatsScreen = () => {
 
   return (
     <ScrollView style={styles.container} contentContainerStyle={{ paddingBottom: 32 }}>
-      <Text style={styles.header}>📊 Statistiques de la tournée</Text>
+      {/* Marge avant le titre */}
+      <View style={{ marginTop: 30 }}>
+        <PageTitle title="Statistiques de la tournée" />
+      </View>
 
       {stats.map((item, idx) => (
         <View key={idx} style={styles.card}>
@@ -46,7 +56,10 @@ const StatsScreen = () => {
             onPress={() => setSelectedFeedback(i)}
           >
             <Icon name={option.icon} size={24} color={selectedFeedback === i ? "#fff" : "#333"} />
-            <Text style={[styles.feedbackLabel, selectedFeedback === i && { color: "#fff" }]}>
+            <Text style={[
+              styles.feedbackLabel,
+              selectedFeedback === i && { color: "#fff" },
+            ]}>
               {option.label}
             </Text>
           </TouchableOpacity>
@@ -54,23 +67,52 @@ const StatsScreen = () => {
       </View>
 
       <TouchableOpacity style={styles.reportButton}>
-        <Text style={styles.reportText}> Générer un rapport journalier</Text>
+        <Text style={styles.reportText}>Générer un rapport journalier</Text>
       </TouchableOpacity>
     </ScrollView>
   );
 };
 
 const styles = StyleSheet.create({
-  container: { flex: 1, backgroundColor: "#F9F9F9", paddingHorizontal: 16 },
-  header: { fontSize: 22, fontWeight: "bold", marginVertical: 20, textAlign: "center" },
-  card: { backgroundColor: "#fff", borderRadius: 10, padding: 16, marginBottom: 12, elevation: 2 },
-  cardRow: { flexDirection: "row", alignItems: "center" },
-  cardContent: { marginLeft: 12 },
-  cardValue: { fontSize: 20, fontWeight: "bold", color: "#333" },
-  cardLabel: { fontSize: 14, color: "#666" },
-
-  feedbackTitle: { fontSize: 18, fontWeight: "bold", marginVertical: 10, textAlign: "center" },
-  feedbackRow: { flexDirection: "row", justifyContent: "space-around", marginBottom: 20 },
+  container: {
+    flex: 1,
+    backgroundColor: "#F9F9F9",
+    paddingHorizontal: 16,
+  },
+  card: {
+    backgroundColor: "#fff",
+    borderRadius: 10,
+    padding: 16,
+    marginBottom: 12,
+    elevation: 2,
+  },
+  cardRow: {
+    flexDirection: "row",
+    alignItems: "center",
+  },
+  cardContent: {
+    marginLeft: 12,
+  },
+  cardValue: {
+    fontSize: 20,
+    fontWeight: "bold",
+    color: "#333",
+  },
+  cardLabel: {
+    fontSize: 14,
+    color: "#666",
+  },
+  feedbackTitle: {
+    fontSize: 18,
+    fontWeight: "bold",
+    marginVertical: 10,
+    textAlign: "center",
+  },
+  feedbackRow: {
+    flexDirection: "row",
+    justifyContent: "space-around",
+    marginBottom: 20,
+  },
   feedbackButton: {
     backgroundColor: "#eee",
     borderRadius: 8,
@@ -79,14 +121,21 @@ const styles = StyleSheet.create({
     alignItems: "center",
     width: 90,
   },
-  feedbackLabel: { marginTop: 4, fontSize: 14 },
+  feedbackLabel: {
+    marginTop: 4,
+    fontSize: 14,
+  },
   reportButton: {
     backgroundColor: "#379F67",
     padding: 14,
     borderRadius: 8,
     alignItems: "center",
   },
-  reportText: { color: "#fff", fontSize: 16, fontWeight: "bold" },
+  reportText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "bold",
+  },
 });
 
 export default StatsScreen;

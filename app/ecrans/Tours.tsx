@@ -1,12 +1,13 @@
+import PageTitle from "@/components/PageTitle";
 import React, { useState } from "react";
 import {
-  View,
-  Text,
-  StyleSheet,
-  TouchableOpacity,
   FlatList,
-  SafeAreaView,
   Linking,
+  SafeAreaView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
 } from "react-native";
 import MapView, { Marker } from "react-native-maps";
 
@@ -45,7 +46,7 @@ const Tours = () => {
     if (points.length < 2) return;
 
     const origin = `${points[0].latitude},${points[0].longitude}`;
-    const destination = origin; // boucle
+    const destination = origin;
 
     const waypoints = points
       .slice(1)
@@ -85,7 +86,9 @@ const Tours = () => {
 
   return (
     <SafeAreaView style={styles.container}>
-      <Text style={styles.title}>🧭 Tournée de collecte</Text>
+      <View style={{ marginTop: 35 }}>
+        <PageTitle title="Tournée de collecte" />
+      </View>
 
       <MapView
         style={styles.map}
@@ -135,7 +138,7 @@ const Tours = () => {
             onPress={startTour}
           >
             <Text style={[styles.buttonText, styles.toggledTextGreen]}>
-              ▶️ Démarrer la tournée
+               Démarrer la tournée
             </Text>
           </TouchableOpacity>
         ) : (
@@ -144,7 +147,7 @@ const Tours = () => {
             onPress={endTour}
           >
             <Text style={[styles.buttonText, styles.toggledTextGreen]}>
-              🛑 Terminer
+               Terminer
             </Text>
           </TouchableOpacity>
         )}
@@ -155,13 +158,6 @@ const Tours = () => {
 
 const styles = StyleSheet.create({
   container: { flex: 1, backgroundColor: "#E8F5E9" },
-  title: {
-    fontSize: 20,
-    fontWeight: "bold",
-    textAlign: "center",
-    marginVertical: 14,
-    color: "#222",
-  },
   map: {
     height: 260,
     borderRadius: 12,

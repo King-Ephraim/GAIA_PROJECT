@@ -17,13 +17,13 @@ const styles = StyleSheet.create({
     alignItems: "flex-start",
     justifyContent: "flex-start",
     backgroundColor: "#fff",
-    paddingVertical: 15,
+    paddingVertical: 20,
     paddingHorizontal: 25,
     margin:10,
   },
   pageTitleText: {
     fontFamily: "calibri",
-    fontSize: 30,
+    fontSize: 25,
     fontWeight: "bold",
   }
 })
