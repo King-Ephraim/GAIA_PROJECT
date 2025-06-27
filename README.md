@@ -108,33 +108,24 @@ npx expo start
 Voici quelques captures d’écran du projet :
 ## Illustrations de l’application web 
 
-![image1](image/image1.png)  
-![image2](image/image2.png)  
-![image3](image/image3.png)  
-![image4](image/image4.png)  
-![image5](image/image5.png)  
-![image6](image/image6.png)  
-![image7](image/image7.png)  
-![image8](image/image8.png)  
-![image9](image/image9.png)  
-![image10](image/image10.png)  
-![image11](image/image11.png)  
-![image12](image/image12.png)  
-![image13](image/image13.png)  
-![image14](image/image14.png)  
-![image15](image/image15.png)  
+![image1](image/image1.png)  ![image2](image/image2.png)  
+![image3](image/image3.png)  ![image4](image/image4.png)  
+![image5](image/image5.png)  ![image6](image/image6.png)  
+![image7](image/image7.png)  ![image8](image/image8.png)  
+![image9](image/image9.png)  ![image10](image/image10.png)  
+![image11](image/image11.png) ![image12](image/image12.png)  
+![image13](image/image13.png) ![image14](image/image14.png) 
+
+## Structure et Fonctionnement de l'api 
+![image15](image/image15.png) 
 ![image16](image/image16.png)  
 ![image17](image/image17.svg)  
 
 ## Illustrations de l’application mobile
  
-![image2](image/image3.jpeg)  
-![image3](image/image4.jpeg)  
-![image4](image/image5.jpeg)  
-![image5](image/image6.jpeg) 
-![image6](image/image7.jpeg) 
-![image7](image/image8.jpeg) 
-![image8](image/image9.jpeg) 
-![image9](image/image10.jpeg) 
+![image2](image/image3.jpeg)  ![image3](image/image4.jpeg)  
+![image4](image/image5.jpeg)  ![image5](image/image6.jpeg) 
+![image6](image/image7.jpeg) ![image7](image/image8.jpeg) 
+![image8](image/image9.jpeg) ![image9](image/image10.jpeg) 
 
 
