@@ -1,0 +1,72 @@
+/* src/components/ZoneCard.css */
+.zone-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  position: relative;
+  height: 300px;
+}
+
+.zone-map {
+  height: 60%;
+  position: relative;
+}
+
+.map-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #006064;
+  font-weight: 600;
+  font-size: 18px;
+}
+
+.zone-info {
+  padding: 16px;
+  height: 40%;
+}
+
+.zone-name {
+  font-size: 18px;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #333;
+}
+
+.zone-description {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 8px 0;
+}
+
+.zone-stats {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2E7D32;
+  margin: 0;
+}
+
+.zone-indicators {
+  position: absolute;
+  bottom: 16px;
+  right: 16px;
+  display: flex;
+  gap: 8px;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #e0e0e0;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.indicator.active {
+  background: #4CAF50;
+}

@@ -1,0 +1,53 @@
+/* src/components/AlertCard.css */
+.alert-card {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  padding: 16px;
+  margin-bottom: 16px;
+  border-left: 3px solid #e0e0e0;
+}
+
+.alert-card:hover {
+  border-left-color: #4CAF50;
+}
+
+.alert-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.alert-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  margin: 0;
+}
+
+.status-badge {
+  font-size: 12px;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+}
+
+.alert-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.detail-item {
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+}
+
+.detail-item strong {
+  color: #333;
+  font-weight: 500;
+}
