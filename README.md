@@ -1,50 +1,90 @@
-# Welcome to your Expo app 👋
+# CollectionDechet
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+> Application mobile  développée avec Expo (React Native) pour la gestion et le suivi des signalements de collecte de déchets. Elle permet aux agents de visualiser les points sur une carte, d'accéder aux détails et de suivre leur progression.
 
-## Get started
 
-1. Install dependencies
 
-   ```bash
-   npm install
-   ```
 
-2. Start the app
+# Fonctionnalités
 
-   ```bash
-   npx expo start
-   ```
+*   Multi-plateforme : Android et IOS grâce à Expo.
+*   Routage Typé :** Navigation robuste et sécurisée basée sur les fichiers avec Expo Router.
+*   Carte Interactive : Visualisation des signalements sur une carte via react-native-maps.
+*   Détails du Signalement :
+    *   Affichage complet : photo, adresse, statut (urgent/non-collecté).
+    *   Possibilité de marquer un signalement comme "collecté".
+    *   Lancement de l'itinéraire vers le point via Google Maps.
+*   Interface Intuitive :** Navigation par onglets en bas de l'écran.
 
-In the output, you'll find options to open the app in a
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+##  Technologies utilisées
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+*   Base : React Native avec expo Router 
+*   Langage : React Native avec expo
+*   Routage : [Expo Router v3](https://docs.expo.dev/router/introduction/)
+*   Cartographie : [react-native-maps] commande:
+*   Icônes : [react-native-vector-icons] commande: 
 
-## Get a fresh project
 
-When you're ready, run:
 
-```bash
-npm run reset-project
-```
+# Prérequis
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+*   Node.js(https://nodejs.org/) 
+*   npm (https://www.npmjs.com/)
+   L'application **Expo Go** sur votre téléphone (iOS ou Android) pour tester sur un appareil physique.
+    *   Télécharger pour iOS(https://apps.apple.com/us/app/expo-go/id982107779)
+    *   Télécharger pour Android(https://play.google.com/store/apps/details?id=host.exp.exponent)
 
-## Learn more
+##  Installation
 
-To learn more about developing your project with Expo, look at the following resources:
+1.  Clonez le dépôt
+    git clone https://github.com/King-Ephraim/GAIA_PROJECT.git
+    cd collectionDechet
+ 
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+2.  Installez les dépendances
+    npm install
 
-## Join the community
+3. Installation des icones et maps
 
-Join our community of developers creating universal apps.
+    expo install react-native-maps
+	
+   expo install @expo/vector-icons
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+ Lancer l'application en développement
+
+1.  Démarrez le serveur de développement Expo
+    npx expo start
+    
+
+2.  Choisissez comment lancer l'application
+    Un terminal interactif et une page web (Expo Dev Tools) s'ouvriront avec un QR code.
+
+    *   Sur votre téléphone  :Ouvrez l'application **Expo Go** et scannez le QR code.
+    *   Sur un simulateur iOS (macOS requis) : Appuyez sur la touche `i` dans le terminal.
+    *   Sur un émulateur Android : Appuyez sur la touche `a` dans le terminal.
+    *   Dans votre navigateur web : Appuyez sur la touche `w` dans le terminal.
+
+
+# Structure des dossiers (avec Expo Router)
+
+Le projet utilise Expo Router, qui se base sur la structure du dossier `app/` pour définir les routes.
+
+collectionDechet/
+├── app/ # Dossier principal pour les routes et écrans
+│ ├── (tabs)/ # Groupe de routes pour la navigation par onglets
+│ │ ├── _layout.tsx # Fichier de layout pour la barre d'onglets
+│ │ ├── home.tsx # Écran d'accueil (route: /)
+│ │ ├── map.tsx # Écran carte (route: /map)
+│ │ ├── tours.tsx # Écran tournées (route: /tours)
+│ │ └── StatsScreen.tsx #Ecran de statistique 
+| | ├── Profil.tsx # Profil de l'agent de collecte 
+| │ ├── DetailSignalement# Plus detail sur le signalement, la position 
+	
+│ ├── _layout.tsx # Layout principal de l'application
+│ └── index.tsx # Point d'entrée, redirige souvent vers (tabs)
+├── assets/ # Images, icônes, polices
+│ └── images/
+├── components/ # Composants React réutilisables (ex: CustomNavBar)
+├── .env # Variables d'environnement (non versionné)
+└── app.json # Fichier de configuration d'Expo
