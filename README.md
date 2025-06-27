@@ -78,7 +78,7 @@ Tu peux simplement ouvrir le fichier `index.html` dans un navigateur, ou visiter
 
 **TOMORY Joèl Olumide**  
 Développeur Full Stack,Conception et Design.
-**Equipe** des **Bites Crafters**/
+**Equipe** des **Bites Crafters**
 
 📄 Licence
 
