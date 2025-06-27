@@ -39,12 +39,6 @@ export default function HomeScreen({ onNavigate }: HomeScreenProps) {
           </View>
         </View>
 
-        <View style={styles.graphContainer}>
-          <View style={styles.numberHistoriqueContainer}>
-            <Text style={styles.numberHistorique}>05</Text>
-          </View>
-        </View>
-
         <View>
           <View style={styles.navigatorContainer}>
             <OptionButton

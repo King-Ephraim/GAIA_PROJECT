@@ -9,11 +9,15 @@ import ReportScreen from "./screens/ReportScreen";
 import ProfileScreen from "./screens/ProfileScreen";
 import SplashScreen from "./screens/SplashScreen";
 import SendScreen from "./screens/SendScreen";
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 const Index = () => {
   const [active, setActive] = useState("home");
   const [showSplash, setShowSplash] = useState(true);
   const [showMainApp, setShowMainApp] = useState(false);
   const [imageUri, setImageUri] = useState<string | null>(null);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [authScreen, setAuthScreen] = useState<"login" | "register">("login");
 
   const fadeAnim = useRef(new Animated.Value(0)).current;
   const slideAnim = useRef(new Animated.Value(30)).current;
@@ -41,6 +45,20 @@ const Index = () => {
     if (showSplash) {
       return <SplashScreen onStart={handleStart} />;
     }
+
+    // if (!isAuthenticated) {
+    // return authScreen === "login" ? (
+    //   <LoginScreen
+    //     onLoginSuccess={() => setIsAuthenticated(true)}
+    //     onGoToRegister={() => setAuthScreen("register")}
+    //   />
+    // ) : (
+    //   <RegisterScreen
+    //     onRegisterSuccess={() => setAuthScreen("login")}
+    //     onGoToLogin={() => setAuthScreen("login")}
+    //   />
+    // );
+  //}
 
     // Le contenu animé
     return (
